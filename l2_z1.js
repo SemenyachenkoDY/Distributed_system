@@ -1,3 +1,5 @@
+#Вывести индекс минимального элемента. Найдите индекс минимального элемента в массиве. 
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
