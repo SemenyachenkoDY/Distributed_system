@@ -1,3 +1,5 @@
+// Фильтрация массива по условию. Оставьте в массиве только элементы,которые больше указанного значения. 
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
