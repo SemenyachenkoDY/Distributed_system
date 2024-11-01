@@ -1,3 +1,5 @@
+#1.	Вывести таблицу умножения для числа N: программа выводит таблицу умножения для введенного числа N.
+    
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
