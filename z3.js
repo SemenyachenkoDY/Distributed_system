@@ -1,4 +1,4 @@
-#3.	Вывести простые числа до N: программа выводит все простые числа до N.
+//Вывести простые числа до N: программа выводит все простые числа до N.
     
 const readline = require('readline').createInterface({
     input: process.stdin,
