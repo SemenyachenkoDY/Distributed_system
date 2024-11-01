@@ -1,30 +1,30 @@
-from flask import Flask, request
-import ssl
+import requests
 
-app = Flask(__name__)
+def make_request():
+    # Данные для отправки
+    original_data = "example data to be sent"
 
-@app.route('/api/data', methods=['POST'])
-def get_data():
-    # Получение данных из POST-запроса
-    data = request.get_json().get('data')
-    sort_key = request.get_json().get('sort_key')  # Получаем ключ для сортировки
-    sort_order = request.get_json().get('sort_order', 'asc')  # Получаем порядок сортировки
+    # Параметры для запроса, включая сортировку
+    request_data = {
+        "data": original_data,    # Данные без шифрования
+        "sort_key": "value",      # Ключ для сортировки
+        "sort_order": "asc"       # Порядок сортировки: 'asc' или 'desc'
+    }
 
-    print(f"Получены данные от клиента: {data}")  # Вывод данных в терминал сервера
+    # URL для отправки запроса
+    url = 'http://localhost:8000/api/data'
 
-    # Пример обработки данных: предположим, что это список словарей
-    processed_data = [
-        {'name': 'item1', 'value': 10},
-        {'name': 'item2', 'value': 5},
-        {'name': 'item3', 'value': 15}
-    ]
+    try:
+        # Отправляем запрос по HTTP
+        response = requests.post(url, json=request_data)
 
-    # Сортировка данных, если указан ключ
-    if sort_key:
-        reverse = sort_order == 'desc'
-        processed_data = sorted(processed_data, key=lambda x: x.get(sort_key), reverse=reverse)
+        if response.status_code == 200:
+            print(response.json())  # Выводим ответ сервера
+        else:
+            print(f"Ошибка: {response.status_code} - {response.text}")
 
-    return {'result': 'ok', 'sorted_data': processed_data}  # Возвращаем отсортированные данные
+    except requests.exceptions.RequestException as req_error:
+        print(f"Ошибка запроса: {req_error}")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)  # Изменен порт на 8000
+    make_request()
