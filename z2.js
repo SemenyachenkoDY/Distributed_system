@@ -1,3 +1,5 @@
+#2.	Определить сумму всех четных чисел до N: программа вычисляет сумму всех четных чисел от 1 до N.
+
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
