@@ -1,0 +1,32 @@
+import requests
+
+def make_request():
+    # Данные для отправки (пример)
+    original_data = "example data to be sent"
+
+    # Параметры для запроса, включая сортировку
+    request_data = {
+        "certificate": "dummy_data_for_http",  # Замените на реальный сертификат, если необходимо
+        "data": original_data,  # Данные без шифрования
+        "sort_key": "value",     # Ключ для сортировки
+        "sort_order": "asc"      # Порядок сортировки: 'asc' или 'desc'
+    }
+
+    s = requests.Session()
+    # URL для отправки запроса
+    url = 'http://localhost:8000/api/data'
+
+    try:
+        # Отправляем запрос по HTTP
+        response = s.post(url, json=request_data)
+
+        if response.status_code == 200:
+            print(response.json())  # Выводим ответ сервера
+        else:
+            print(f"Ошибка: {response.status_code} - {response.text}")
+
+    except requests.exceptions.RequestException as req_error:
+        print(f"Ошибка запроса: {req_error}")
+
+if __name__ == '__main__':
+    make_request()
