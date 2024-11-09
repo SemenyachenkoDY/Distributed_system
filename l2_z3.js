@@ -1,23 +1,15 @@
-// Фильтрация массива по условию. Оставьте в массиве только элементы,которые больше указанного значения. 
+// Фильтрация массива по условию. Оставьте в массиве только элементы,которые больше указанного значения.
 
-const readline = require('readline');
+const prompt = require("prompt-sync")(); //это модуль для получения пользовательского ввода в Node.js.
+let arr = [5, 10, 15, 20, 25]; // пример массива
+let number = prompt("Введите пороговое значение: "); // запрашиваем у пользователя значение
+number = parseInt(number); // преобразуем его в число
+let filteredArr = []; // создаем новый массив для отфильтрованных значений
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-function filterArray(arr, threshold) {
-    return arr.filter(item => item > threshold); // Оставляем только элементы больше указанного значения
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > number) { // проверяем, больше ли элемент порога
+    filteredArr.push(arr[i]); // добавляем элемент в новый массив, если он подходит
+  }
 }
 
-// Ввод массива и порога с клавиатуры
-rl.question("Введите числа через запятую: ", (input) => {
-    const originalArray = input.split(',').map(Number);
-    
-    rl.question("Введите пороговое значение: ", (thresholdInput) => {
-        const threshold = parseInt(thresholdInput, 10);
-        console.log("Отфильтрованный массив:", filterArray(originalArray, threshold));
-        rl.close();
-    });
-});
+console.log("Отфильтрованный массив: ", filteredArr); // выводим отфильтрованный массив

@@ -1,23 +1,12 @@
-//Создание массива с четными числами до N. Пользователь вводит N,программа создает массив четных чисел до N. 
+//Создание массива с четными числами до N. Пользователь вводит N, программа создает массив четных чисел до N.
 
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const prompt = require("prompt-sync")(); //это модуль для получения пользовательского ввода в Node.js.
+let N = prompt("Введите число N: "); // Запрашиваем у пользователя значение N
+N = parseInt(N); // Преобразуем введенное значение в число
 
-function createEvenArray(N) {
-    const evenNumbers = [];
-    for (let i = 0; i <= N; i++) {
-        if (i % 2 === 0) {
-            evenNumbers.push(i); 
-        }
-    }
-    return evenNumbers;
+let evenNumbers = []; // создаем пустой массив для четных чисел
+
+for (let i = 2; i <= N; i += 2) { // начинаем с 2 и добавляем по 2
+  evenNumbers.push(i); // добавляем четное число в массив
 }
-
-rl.question("Введите значение N: ", (input) => {
-    const N = parseInt(input, 10);
-    console.log("Четные числа до N:", createEvenArray(N));
-    rl.close();
-});
+console.log("Массив четных чисел до N:", evenNumbers); // выводим массив
