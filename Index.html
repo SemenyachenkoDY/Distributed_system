@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>График курса валют</title>
+        <!-- Подключаем библиотеку Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    </head>
+    <body>
+        <h1>Курс валют за выбранный период</h1>
+        
+        <!-- Выбор валюты -->
+        <label for="currency">Выберите валюту:</label>
+        <select id="currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+        </select>
+    
+        <!-- Выбор дат -->
+        <label for="startDate">Начальная дата:</label>
+        <input type="date" id="startDate">
+        <label for="endDate">Конечная дата:</label>
+        <input type="date" id="endDate">
+    
+        <!-- Канвас для графика -->
+        <canvas id="fluctuationChart" width="400" height="200"></canvas>
+    
+        <script src="script.js"></script>
+    </body>
+    </html>
+    
+    
