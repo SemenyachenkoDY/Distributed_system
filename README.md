@@ -20,24 +20,24 @@
 ## Лабораторная работа 4. Браузерный JavaScript
 
 * [Задание 1 Создайте интерактивный график курса валют за неделю.]()
-> * [index.html]()
+> * [index.html](z1_Index.html)
 > 
-> * [styles.css]()
+> * [styles.css](z1_styles.css)
 > 
-> * [script.js]()
+> * [script.js](z1_script.js)
 
 * [Задание 2 Реализуйте простой редактор HTML с предпросмотром в реальном времени]()
-> * [index.html]()
+> * [index.html](z2_Index.html)
 > 
-> * [styles.css]()
+> * [styles.css](z2_styles.css)
 > 
-> * [script.js]()
+> * [script.js](z2_script.js)
 * [Задание 3 Разработайте игру "Сапер" на поле 8x8.]()
-> * [index.html]()
+> * [index.html](Index.html)
 > 
-> * [styles.css]()
+> * [styles.css](styles.css)
 > 
-> * [script.js]()
+> * [script.js](script.js)
 
 ## Лабораторная работа 5. События и манипуляции с DOM
 
