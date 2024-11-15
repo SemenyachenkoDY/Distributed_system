@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+h1 {
+    color: #333;
+}
+
+#mine-counter {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    grid-gap: 2px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cell.revealed {
+    background-color: #ccc;
+    color: black;
+}
+
+.cell.mine {
+    background-color: red;
+}
+
+.cell.flag {
+    background-color: #007bff;
+    color: yellow;
+}
+
+.cell.mine-count-1 { color: blue; }
+.cell.mine-count-2 { color: green; }
+.cell.mine-count-3 { color: red; }
+.cell.mine-count-4 { color: darkblue; }
+.cell.mine-count-5 { color: brown; }
+.cell.mine-count-6 { color: teal; }
+.cell.mine-count-7 { color: black; }
+.cell.mine-count-8 { color: gray; }
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
