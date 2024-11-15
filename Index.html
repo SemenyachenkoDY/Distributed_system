@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактор HTML с Предпросмотром</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>HTML Редактор с Предпросмотром</h1>
+
+    <!-- Панель инструментов -->
+    <div class="toolbar">
+        <button onclick="wrapText('<b>', '</b>')"><b>Жирный</b></button>
+        <button onclick="wrapText('<i>', '</i>')"><i>Курсив</i></button>
+        <button onclick="wrapText('<u>', '</u>')"><u>Подчёркнутый</u></button>
+        <button onclick="wrapText('<h1>', '</h1>')">Заголовок H1</button>
+        <button onclick="wrapText('<p>', '</p>')">Абзац</button>
+        <button onclick="wrapText('<ul><li>', '</li></ul>')">Список</button>
+    </div>
+
+    <!-- Контейнер с редактором и предпросмотром -->
+    <div class="editor-container">
+        <textarea id="htmlEditor" placeholder="Введите HTML-код здесь..."></textarea>
+        <div id="previewContainer" class="preview-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
